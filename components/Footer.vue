@@ -5,7 +5,7 @@
       <div class="text-center">
         <!-- 版权信息 -->
         <p class="text-white text-opacity-60 mb-4">
-          © {{ currentYear }} BaiShui. All rights reserved.
+          © {{ currentYear }} 牧之水. All rights reserved.
         </p>
         
         <!-- 社交链接 -->

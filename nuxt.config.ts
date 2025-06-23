@@ -7,21 +7,8 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@nuxt/ui',
     '@nuxt/icon',
-    '@nuxt/eslint',
-    '@nuxtjs/color-mode'
+    '@nuxt/eslint'
   ],
-
-  // 暗色模式配置
-  colorMode: {
-    preference: 'dark', // 默认为深色模式
-    fallback: 'dark', // 后备方案为深色
-    hid: 'nuxt-color-mode-script',
-    globalName: '__NUXT_COLOR_MODE__',
-    componentName: 'ColorScheme',
-    classPrefix: '',
-    classSuffix: '',
-    storageKey: 'nuxt-color-mode'
-  },
 
   // 开发服务器配置 - 允许外部访问
   devServer: {
@@ -36,22 +23,22 @@ export default defineNuxtConfig({
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-        { name: 'description', content: 'BaiShui - 个人网站，展示技术作品和专业能力' },
-        { name: 'keywords', content: 'BaiShui, 个人网站, 前端开发, Vue.js, Nuxt.js, 技术博客' },
-        { name: 'author', content: 'BaiShui' },
+        { name: 'description', content: '牧之水 - Java架构师个人网站，专注后端技术与微服务架构，8年+企业级项目经验' },
+        { name: 'keywords', content: '牧之水, Java架构师, Spring Boot, 微服务, 分布式系统, 后端开发, 性能优化, 技术咨询' },
+        { name: 'author', content: '牧之水' },
         { name: 'robots', content: 'index, follow' },
         
         // Open Graph / Facebook
         { property: 'og:type', content: 'website' },
-        { property: 'og:title', content: 'BaiShui - 个人网站' },
-        { property: 'og:description', content: 'BaiShui个人网站，展示技术作品和专业能力' },
+        { property: 'og:title', content: '牧之水 - Java架构师个人网站' },
+        { property: 'og:description', content: '牧之水个人网站，Java架构师，专注后端技术与微服务架构' },
         { property: 'og:image', content: '/og-image.jpg' },
         { property: 'og:url', content: 'https://your-domain.com' },
         
         // Twitter
         { name: 'twitter:card', content: 'summary_large_image' },
-        { name: 'twitter:title', content: 'BaiShui - 个人网站' },
-        { name: 'twitter:description', content: 'BaiShui个人网站，展示技术作品和专业能力' },
+        { name: 'twitter:title', content: '牧之水 - Java架构师个人网站' },
+        { name: 'twitter:description', content: '牧之水个人网站，Java架构师，专注后端技术与微服务架构' },
         { name: 'twitter:image', content: '/og-image.jpg' },
         
         // 其他SEO标签
@@ -66,10 +53,10 @@ export default defineNuxtConfig({
           innerHTML: JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'Person',
-            name: 'BaiShui',
+            name: '牧之水',
             url: 'https://your-domain.com',
-            jobTitle: '前端开发工程师',
-            description: '专注于Vue.js、Nuxt.js等前端技术的开发者',
+                          jobTitle: 'Java架构师 & 后端技术专家',
+                          description: 'Java架构师，专注后端技术与微服务架构，8年+企业级项目经验',
             sameAs: [
               'https://github.com/your-username',
               'https://twitter.com/your-username'
@@ -112,8 +99,8 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       siteUrl: process.env.NUXT_PUBLIC_SITE_URL || 'https://your-domain.com',
-      siteName: 'BaiShui - 个人网站',
-      siteDescription: 'BaiShui个人网站，展示技术作品和专业能力'
+          siteName: '牧之水 - Java架构师个人网站',
+    siteDescription: '牧之水个人网站，Java架构师，专注后端技术与微服务架构'
     }
   }
 })

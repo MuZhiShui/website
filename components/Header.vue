@@ -1,6 +1,6 @@
 <template>
   <!-- 顶部导航栏 - 固定定位，毛玻璃效果 -->
-  <header style="position: fixed; top: 0; left: 0; right: 0; z-index: 50; backdrop-filter: blur(10px); background: rgba(255, 255, 255, 0.1); border-bottom: 1px solid rgba(255, 255, 255, 0.2);">
+  <header style="position: fixed; top: 0; left: 0; right: 0; z-index: 50; backdrop-filter: blur(10px); background: rgba(99, 102, 241, 0.15); border-bottom: 1px solid rgba(99, 102, 241, 0.3);">
     <nav style="max-width: 1200px; margin: 0 auto; padding: 16px; display: flex; align-items: center; justify-content: space-between;">
       <!-- 左侧 Logo 和功能区 -->
       <div style="display: flex; align-items: center; gap: 16px;">
@@ -11,7 +11,7 @@
             <span style="color: white; font-size: 20px;">✨</span>
           </div>
           <!-- 网站标题 -->
-          <h1 style="color: white; font-size: 20px; font-weight: bold; margin: 0;">BaiShui</h1>
+                      <h1 style="color: white; font-size: 20px; font-weight: bold; margin: 0;">牧之水</h1>
         </div>
         
         <!-- 功能区 -->
@@ -149,7 +149,7 @@
     </nav>
 
     <!-- 移动端菜单 -->
-    <div v-if="isMobileMenuOpen && windowWidth <= 768" style="padding: 16px; border-top: 1px solid rgba(255, 255, 255, 0.2); background: rgba(255, 255, 255, 0.1);">
+    <div v-if="isMobileMenuOpen && windowWidth <= 768" style="padding: 16px; border-top: 1px solid rgba(99, 102, 241, 0.3); background: rgba(99, 102, 241, 0.1);">
       <div style="display: flex; flex-direction: column; gap: 12px;">
         <NuxtLink 
           to="/" 
@@ -261,7 +261,7 @@
 const isMobileMenuOpen = ref(false)
 const currentLanguage = ref('中')
 const windowWidth = ref(1024)
-const isDark = ref(false)
+const isDark = ref(true)
 
 // 弹窗状态
 const showSearchModal = ref(false)
@@ -279,7 +279,7 @@ const notifications = ref([
   {
     id: 1,
     title: '欢迎访问',
-    message: '欢迎来到 BaiShui 的个人网站！',
+    message: '欢迎来到牧之水的个人网站！',
     time: '2分钟前'
   },
   {
@@ -303,11 +303,19 @@ onMounted(() => {
   }
   window.addEventListener('resize', updateWindowWidth)
   updateWindowWidth()
+  
+  // 初始化主题为深色模式
+  document.documentElement.classList.add('dark')
 })
 
 // 基础方法
 const toggleColorMode = () => {
   isDark.value = !isDark.value
+  if (isDark.value) {
+    document.documentElement.classList.add('dark')
+  } else {
+    document.documentElement.classList.remove('dark')
+  }
   console.log('切换主题:', isDark.value ? '深色' : '浅色')
 }
 
